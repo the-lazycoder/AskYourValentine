@@ -80,8 +80,10 @@
         yesButton.style.fontSize = `${fontSize}px`; // Update font size
         if (noClickCount < 6) {
           noButton.textContent = ["No", "Are you sure?", "Love please", "Don't do this to me :(", "You're breaking my heart", "I'm gonna cry..."][noClickCount];
-        }
-      }
+        } 
+      }else{
+          noButton.style.display = 'none'; // Hide the "No" button after 5 clicks
+      }       
     });
   
     yesButton.addEventListener('click', () => {
@@ -89,6 +91,8 @@
       valentineQuestion.textContent = "Yayyy!! :3"; // Change the question text
       responseButtons.style.display = 'none'; // Hide both buttons
       confetti(); // Trigger confetti animation
+      window.open('mailto:yohann.18@live.com?subject=I Said Yes&body=Hi Love, /n I Will be your Valentine! :3', '_blank'); // Open email client with pre-filled message
+
     });
   </script>  
 </body>
